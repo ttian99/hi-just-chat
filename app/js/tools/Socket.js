@@ -1,0 +1,51 @@
+import io from '/socket.io/socket.io.js';
+
+const Socket = {
+  socket: null,
+};
+
+Socket.init = () => {
+  // 连接websocket后端服务器
+  this.socket = io.connect('ws://localhost:5000');
+};
+
+Socket.send = (cmd, data) => {
+  this.socket.emit(cmd, data);
+};
+
+Socket.listen = (cmd, cb) => {
+  this.socket.on(cmd, cb);
+};
+
+export default Socket;
+
+// // 告诉服务器端有用户登录
+// this.socket.emit('login', { userid: this.userid, username: this.username });
+
+// // 监听新用户登录
+// this.socket.on('login', function (o) {
+//   CHAT.updateSysMsg(o, 'login');
+// });
+
+// // 监听用户退出
+// this.socket.on('logout', function (o) {
+//   CHAT.updateSysMsg(o, 'logout');
+// });
+
+// // 监听消息发送
+// this.socket.on('message', function (obj) {
+//   var isme = (obj.userid == CHAT.userid) ? true : false;
+//   var contentDiv = '<div>' + obj.content + '</div>';
+//   var usernameDiv = '<span>' + obj.username + '</span>';
+
+//   var section = d.createElement('section');
+//   if (isme) {
+//     section.className = 'user';
+//     section.innerHTML = contentDiv + usernameDiv;
+//   } else {
+//     section.className = 'service';
+//     section.innerHTML = usernameDiv + contentDiv;
+//   }
+//   CHAT.msgObj.appendChild(section);
+//   CHAT.scrollToBottom();
+// });
