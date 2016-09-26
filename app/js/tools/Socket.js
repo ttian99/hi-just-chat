@@ -1,23 +1,39 @@
-import io from '/socket.io/socket.io.js';
+// import io from '../../node_modules/socket.io-client/socket.io.js';
 
-const Socket = {
-  socket: null,
+const SO = {
+  socket: null
 };
 
-Socket.init = () => {
+SO.init = () => {
   // 连接websocket后端服务器
-  this.socket = io.connect('ws://localhost:5000');
+  SO.socket = io.connect('ws://localhost:5000');
+
+  // SO.listen("login", function(data){
+  // 	console.log('--- login ---');
+  // 	console.log(JSON.stringify(data));
+  // });
+
+  // SO.listen("logout", function(data){
+  // 	console.log('--- logout ---');
+  // 	console.log(JSON.stringify(data));
+  // });
+
+  // SO.listen('message', function(data){
+  // 	console.log('--- message ---');
+  // 	console.log(JSON.stringify(data));
+  // });
+
 };
 
-Socket.send = (cmd, data) => {
-  this.socket.emit(cmd, data);
+SO.send = (cmd, data) => {
+  SO.socket.emit(cmd, data);
 };
 
-Socket.listen = (cmd, cb) => {
-  this.socket.on(cmd, cb);
+SO.listen = (cmd, cb) => {
+  SO.socket.on(cmd, cb);
 };
 
-export default Socket;
+export default SO;
 
 // // 告诉服务器端有用户登录
 // this.socket.emit('login', { userid: this.userid, username: this.username });

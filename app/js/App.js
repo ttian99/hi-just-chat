@@ -21,8 +21,9 @@ class App extends React.Component {
 }
 
 // Pages
-import Index from './pages/Index';
+// import Index from './pages/Index';
 import Login from './pages/Login';
+import ChatRoom from './pages/ChatRoom';
 // import Page from './pages/Page';
 
 // withRouter HoC
@@ -31,6 +32,7 @@ const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Login} />
+      <Route path="/chatroom" component={ChatRoom} />
     </Route>
   </Router>
 );

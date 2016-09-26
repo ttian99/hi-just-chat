@@ -28,6 +28,10 @@ $ratchicons-path: "../../node_modules/amazeui-touch/fonts/";
 }
 
 textarea.chatTxt.field {
-	margin-bottom: 5px;
-	min-height: 1.5rem;
+  margin-bottom: 5px;
+  min-height: 1.5rem;
+}
+
+.msg-list-cnt{
+  overflow-y: hidden;
 }

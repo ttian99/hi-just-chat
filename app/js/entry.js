@@ -21,4 +21,6 @@ import '../i/touch/ms-touch-icon-144x144-precomposed.png';
 import '../style/app.scss'
 
 // load App
+import SO from './tools/socket.js';
+SO.init();
 import './App'
