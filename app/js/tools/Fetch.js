@@ -1,6 +1,7 @@
 /* global ActiveXObject */
 import querystring from 'querystring';
-import cfg from '../config/cfg';
+// import cfg from '../config/cfg';
+const svrUrl = 'http://localhost:5000/';
 
 class Response {
   constructor(body, opts) {
@@ -81,7 +82,7 @@ function fetch(gain, cb) {
   dt.method = 'POST';
   dt.body = gain;
   dt.timeout = gain.timeout || 10000;
-  fetchFuc(cfg.svrUrl, dt).then(response => {
+  fetchFuc(svrUrl, dt).then(response => {
     if (cb) {
       const result = response.json();
       if (Number(result.code) !== 0) {

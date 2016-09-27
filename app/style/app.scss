@@ -33,5 +33,14 @@ textarea.chatTxt.field {
 }
 
 .msg-list-cnt{
-  overflow-y: hidden;
+  overflow-y: auto;
+}
+
+.username {
+  font-size: 10px;
+  color: #a0a7a8;
+}
+
+.message {
+  font-size: 14px;
 }

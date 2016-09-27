@@ -32,7 +32,8 @@ const routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Login} />
-      <Route path="/chatroom" component={ChatRoom} />
+      <Route path="/chatroom" component={ChatRoom}>
+      </Route>
     </Route>
   </Router>
 );

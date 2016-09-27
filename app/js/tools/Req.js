@@ -1,9 +1,9 @@
 import fetch from './Fetch';
 const Req = {};
 
-Req.searchSchool = (params, cb) => {
-  console.log('------ req searchSchool --');
-  params.cmd = 'search-school';
+Req.login = (params, cb) => {
+  console.log('------ req login --');
+  params.cmd = 'login';
   fetch(params, (err, json) => {
     cb(err, json);
   });
