@@ -21,6 +21,8 @@ import '../i/touch/ms-touch-icon-144x144-precomposed.png';
 import '../style/app.scss';
 
 // load App
+import cfg from './cfg.js';
+cfg.init();
 import dataMgr from './tools/dataMgr.js';
 dataMgr.init();
 import SO from './tools/socket.js';

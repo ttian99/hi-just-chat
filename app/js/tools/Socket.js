@@ -1,12 +1,12 @@
 // import io from '../../node_modules/socket.io-client/socket.io.js';
-
+import cfg from '../cfg.js';
 const SO = {
-  socket: null
+  socket: null,
 };
 
 SO.init = () => {
   // 连接websocket后端服务器
-  SO.socket = io.connect('ws://localhost:5000');
+  SO.socket = io.connect(cfg.wsUrl);
 
   // SO.listen("login", function(data){
   // 	console.log('--- login ---');

@@ -22,8 +22,8 @@ class App extends React.Component {
 
 // Pages
 // import Index from './pages/Index';
-import Login from './pages/Login';
-import ChatRoom from './pages/ChatRoom';
+import Login from './pages/MiniLogin';
+import ChatRoom from './pages/MiniChatRoom';
 // import Page from './pages/Page';
 
 // withRouter HoC

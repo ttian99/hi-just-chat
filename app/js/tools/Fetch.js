@@ -1,7 +1,7 @@
 /* global ActiveXObject */
 import querystring from 'querystring';
 // import cfg from '../config/cfg';
-const svrUrl = 'http://localhost:5000/';
+const svrUrl = 'http://120.24.209.148:5000/';
 
 class Response {
   constructor(body, opts) {

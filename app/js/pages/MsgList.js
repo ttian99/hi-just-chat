@@ -17,21 +17,28 @@ export default class MsgList extends React.Component {
 
   render() {
     const btn = (<Button hollow amStyle="primary">Send</Button>)
+    const getItem = (item, id)=>{
+      const color = item.color || '#696969';
+      const speaker = item.type === 'sys' ? '== 系统消息 ==' : '【' + item.username + '】';
+    
+      return (
+        <Grid collapse={true} wrap="wrap">
+          <Col className="username" style={{ "color": color }} cols={6}>
+            <span>{speaker}</span>
+          </Col>
+          <Col className="message" cols={6} style={{ "color": color }}>
+            <span>{item.msg + ''}</span>
+          </Col>
+        </Grid>
+      )
+    }
     return (
       <List>
         {
           _.map(this.props.txtList, (item, id) => {
-            const color = item.color || '#696969';
             return(
               <List.Item key={id}>
-                <Grid collapse={true} wrap="wrap">
-                  <Col className="username" style={{"color": color}} cols={6}>
-                    <span>{"【" + item.username + "】"}</span>
-                  </Col>
-                  <Col className="message" cols={6} style={{"color": color}}>
-                    <span>{item.msg}</span>
-                  </Col>
-                </Grid>
+                {getItem(item, id)}
               </List.Item>
             )
           })
